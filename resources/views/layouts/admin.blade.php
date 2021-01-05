@@ -47,7 +47,7 @@
                             <img src="{{asset('icons\043-menu.svg')}}" class="w-6" alt="">
                         </button>
                         <!-- start sidebar -->
-                        <div x-show="open" @click.away="open = false" class="top-0 left-0 h-screen w-60 bg-white rounded shadow-md absolute mt-20 bg-white text-black px-4">
+                        <div x-show="open" @click.away="open = false" class="top-0 left-0 h-screen w-60 bg-white rounded shadow-md absolute mt-20 bg-white text-black">
                             <!-- sidebar content -->
                             <div class="flex flex-col mt-1">
                                 <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
