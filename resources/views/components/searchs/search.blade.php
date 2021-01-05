@@ -1,0 +1,1 @@
+<input wire:model="{{$var}}" type="search" placeholder="Buscar por {{$dato}}..." class="border border-indigo-500 block bg-gray-200 focus:outline-none focus:bg-white focus:shadow-md text-gray-700 font-bold rounded-full h-13 mt-1 w-52 md:w-96 pl-4 pr-4 ">

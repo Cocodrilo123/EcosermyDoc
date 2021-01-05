@@ -14,7 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('prueba');
+});
+
+
+Route::get('/ecosermyCharges', function () {
+    return view('viewCharges/ecosermyCharges');
+});
+
+Route::get('/areas', function () {
+    return view('viewAreasProjects/areas');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
