@@ -16,8 +16,8 @@ class CreateCallsTable extends Migration
         Schema::create('calls', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->unsignedBigInteger('ecosermyCharge_id')->nullable();
-            $table->foreign('ecosermyCharge_id')->references('id')->on('ecosermy_charges')->onDelete('cascade');
+            $table->unsignedBigInteger('ecosermy_charge_id')->nullable();
+            $table->foreign('ecosermy_charge_id')->references('id')->on('ecosermy_charges')->onDelete('cascade');
             $table->unsignedBigInteger('area_id')->nullable();
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
             $table->string('description', 100)->nullable($value =true);

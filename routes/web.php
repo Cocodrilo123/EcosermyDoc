@@ -18,12 +18,21 @@ Route::get('/', function () {
 });
 
 
+
+
 Route::get('/ecosermyCharges', function () {
     return view('viewCharges/ecosermyCharges');
+});
+Route::get('/volcanCharges', function () {
+    return view('viewCharges/volcanCharges');
 });
 
 Route::get('/areas', function () {
     return view('viewAreasProjects/areas');
+});
+
+Route::get('/calls', function () {
+    return view('viewCalls/calls');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

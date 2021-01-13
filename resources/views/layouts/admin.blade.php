@@ -61,7 +61,7 @@
                                             @slot('text', 'Cargo Ecosermy')
                                         @endcomponent
                                         @component('components/menu_lists.menu_item')
-                                            @slot('url', 'Ruta')
+                                            @slot('url', 'volcanCharges')
                                             @slot('icon', 'icons\094-partnership.svg')
                                             @slot('text', 'Cargo Volcan')
                                         @endcomponent
@@ -81,7 +81,7 @@
                                     @endcomponent
                                     <div x-show="open" @click.away="open = false" class="flex flex-col">
                                         @component('components/menu_lists.menu_item')
-                                            @slot('url', 'Ruta')
+                                            @slot('url', 'calls')
                                             @slot('icon', 'icons\095-promotion.svg')
                                             @slot('text', 'Convocatorias')
                                         @endcomponent
