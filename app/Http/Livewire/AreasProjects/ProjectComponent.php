@@ -1,29 +1,29 @@
 <?php
 
-namespace App\Http\Livewire\Charges;
+namespace App\Http\Livewire\AreasProjects;
 
 use Livewire\Component;
-use App\Models\volcanCharge ;
+use App\Models\project;
 use Doctrine\Inflector\Rules\English\Rules;
 use Illuminate\Contracts\Pagination\Paginator;
 use Livewire\WithPagination;
 
-class VolcanChargeComponent extends Component
+class ProjectComponent extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'tailwind';
     public $isOpen,$isOpenDelete = 0;
-    public $name, $description, $charge_id;
+    public $name, $description, $project_id;
     public $search = '';
     protected $queryString = ['search'];
     protected $rules = [
-        'name'=>'required|max:100|unique:volcan_charges',
+        'name'=>'required|max:100|unique:projects',
         'description'=>'required',
     ];
     public function render()
     {
-        $volcanCharges = volcanCharge::where('name', 'like', '%'.$this->search.'%')->orderBy('id','desc')->paginate(7);
-        return view('livewire.charges.volcan-charge-component', compact('volcanCharges'));
+        $projects = project::where('name', 'like', '%'.$this->search.'%')->orderBy('id','desc')->paginate(7);
+        return view('livewire.areas-projects.project-component', compact('projects'));
     }
     public function create()
     {
@@ -40,28 +40,28 @@ class VolcanChargeComponent extends Component
         $this->isOpen = false;
     }
     private function resetInputFields(){
-        $this->charge_id='';
+        $this->project_id='';
         $this->name = '';
         $this->description = '';
     }
     public function store()
     {
         $this->validate();
-        volcanCharge::updateOrCreate(['id' => $this->charge_id], [
+        project::updateOrCreate(['id' => $this->project_id], [
             'name' => $this->name,
             'description' => $this->description
         ]);
         session()->flash('message',
-        $this->charge_id ? 'Accion exitosa' : 'Elemento creado');
+        $this->project_id ? 'Accion exitosa' : 'Elemento creado');
         $this->closeModal();
         $this->resetInputFields();
     }
     public function edit($id)
     {
-        $volcanCharges = volcanCharge::findOrFail($id);
-        $this->charge_id = $id;
-        $this->name = $volcanCharges->name;
-        $this->description = $volcanCharges->description;
+        $projects = project::findOrFail($id);
+        $this->project_id = $id;
+        $this->name = $projects->name;
+        $this->description = $projects->description;
         $this->openModal();
     }
     public function deleteModal($id)
@@ -70,9 +70,9 @@ class VolcanChargeComponent extends Component
     }
     public function openModalDelete($id)
     {
-        $charge_id = volcanCharge::findOrFail($id);
-        $this->charge_id = $id;
-        $this->name = $charge_id->name;
+        $projects = project::findOrFail($id);
+        $this->project_id = $id;
+        $this->name = $projects->name;
         $this->isOpenDelete = true;
     }
     public function closeModalDelete()
@@ -81,7 +81,7 @@ class VolcanChargeComponent extends Component
     }
     public function delete()
     {
-        volcanCharge::find($this->charge_id)->delete();
+        project::find($this->project_id)->delete();
         session()->flash('message',
         $this->id ? 'Elemento Eliminado' : '');
         $this->closeModalDelete();

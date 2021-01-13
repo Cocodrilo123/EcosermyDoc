@@ -52,6 +52,26 @@
                             <div class="flex flex-col mt-1">
                                 <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
                                     @component('components/menu_lists.menu_title')
+                                        @slot('title', 'Areas y proyectos')
+                                    @endcomponent
+                                    <div x-show="open" @click.away="open = false" class="flex flex-col">
+                                        @component('components/menu_lists.menu_item')
+                                            @slot('url', 'areas')
+                                            @slot('icon', 'icons\098-department.svg')
+                                            @slot('text', 'Areas')
+                                        @endcomponent
+                                        @component('components/menu_lists.menu_item')
+                                            @slot('url', 'projects')
+                                            @slot('icon', 'icons\097-project.svg')
+                                            @slot('text', 'Proyectos')
+                                        @endcomponent
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col mt-1">
+                                <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
+                                    @component('components/menu_lists.menu_title')
                                         @slot('title', 'Cargos u Ocupaciones')
                                     @endcomponent
                                     <div x-show="open" @click.away="open = false" class="flex flex-col">
@@ -66,7 +86,7 @@
                                             @slot('text', 'Cargo Volcan')
                                         @endcomponent
                                         @component('components/menu_lists.menu_item')
-                                            @slot('url', 'Ruta')
+                                            @slot('url', 'chinalcoCharges')
                                             @slot('icon', 'icons\094-partnership.svg')
                                             @slot('text', 'Cargo Chinalco')
                                         @endcomponent
@@ -94,25 +114,6 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-col mt-1">
-                                <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
-                                    @component('components/menu_lists.menu_title')
-                                        @slot('title', 'Areas y proyectos')
-                                    @endcomponent
-                                    <div x-show="open" @click.away="open = false" class="flex flex-col">
-                                        @component('components/menu_lists.menu_item')
-                                            @slot('url', 'areas')
-                                            @slot('icon', 'icons\098-department.svg')
-                                            @slot('text', 'Areas')
-                                        @endcomponent
-                                        @component('components/menu_lists.menu_item')
-                                            @slot('url', 'Ruta')
-                                            @slot('icon', 'icons\097-project.svg')
-                                            @slot('text', 'Proyectos')
-                                        @endcomponent
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- end sidebar content -->
                     </div>

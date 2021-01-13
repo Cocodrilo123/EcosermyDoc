@@ -3,12 +3,12 @@
 namespace App\Http\Livewire\Charges;
 
 use Livewire\Component;
-use App\Models\volcanCharge ;
+use App\Models\chinalcoCharge ;
 use Doctrine\Inflector\Rules\English\Rules;
 use Illuminate\Contracts\Pagination\Paginator;
 use Livewire\WithPagination;
 
-class VolcanChargeComponent extends Component
+class ChinalcoChargeComponent extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'tailwind';
@@ -17,13 +17,13 @@ class VolcanChargeComponent extends Component
     public $search = '';
     protected $queryString = ['search'];
     protected $rules = [
-        'name'=>'required|max:100|unique:volcan_charges',
+        'name'=>'required|max:100|unique:chinalco_charges',
         'description'=>'required',
     ];
     public function render()
     {
-        $volcanCharges = volcanCharge::where('name', 'like', '%'.$this->search.'%')->orderBy('id','desc')->paginate(7);
-        return view('livewire.charges.volcan-charge-component', compact('volcanCharges'));
+        $chinalcoCharges = chinalcoCharge::where('name', 'like', '%'.$this->search.'%')->orderBy('id','desc')->paginate(7);
+        return view('livewire.charges.chinalco-charge-component', compact('chinalcoCharges'));
     }
     public function create()
     {
@@ -47,7 +47,7 @@ class VolcanChargeComponent extends Component
     public function store()
     {
         $this->validate();
-        volcanCharge::updateOrCreate(['id' => $this->charge_id], [
+        chinalcoCharge::updateOrCreate(['id' => $this->charge_id], [
             'name' => $this->name,
             'description' => $this->description
         ]);
@@ -58,10 +58,10 @@ class VolcanChargeComponent extends Component
     }
     public function edit($id)
     {
-        $volcanCharges = volcanCharge::findOrFail($id);
+        $chinalcoCharges = chinalcoCharge::findOrFail($id);
         $this->charge_id = $id;
-        $this->name = $volcanCharges->name;
-        $this->description = $volcanCharges->description;
+        $this->name = $chinalcoCharges->name;
+        $this->description = $chinalcoCharges->description;
         $this->openModal();
     }
     public function deleteModal($id)
@@ -70,7 +70,7 @@ class VolcanChargeComponent extends Component
     }
     public function openModalDelete($id)
     {
-        $charge_id = volcanCharge::findOrFail($id);
+        $charge_id = chinalcoCharge::findOrFail($id);
         $this->charge_id = $id;
         $this->name = $charge_id->name;
         $this->isOpenDelete = true;
@@ -81,7 +81,7 @@ class VolcanChargeComponent extends Component
     }
     public function delete()
     {
-        volcanCharge::find($this->charge_id)->delete();
+        chinalcoCharge::find($this->charge_id)->delete();
         session()->flash('message',
         $this->id ? 'Elemento Eliminado' : '');
         $this->closeModalDelete();

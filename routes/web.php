@@ -19,17 +19,26 @@ Route::get('/', function () {
 
 
 
-
+// Start charges
 Route::get('/ecosermyCharges', function () {
     return view('viewCharges/ecosermyCharges');
 });
 Route::get('/volcanCharges', function () {
     return view('viewCharges/volcanCharges');
 });
+Route::get('/chinalcoCharges', function () {
+    return view('viewCharges/chinalcoCharges');
+});
+// End charges
 
+// start areas and projects
 Route::get('/areas', function () {
     return view('viewAreasProjects/areas');
 });
+Route::get('/projects', function () {
+    return view('viewAreasProjects/projects');
+});
+// end areas and projects
 
 Route::get('/calls', function () {
     return view('viewCalls/calls');
