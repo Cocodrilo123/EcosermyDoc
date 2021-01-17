@@ -40,10 +40,17 @@ Route::get('/projects', function () {
 });
 // end areas and projects
 
+// start calls
 Route::get('/calls', function () {
     return view('viewCalls/calls');
 });
+// end calls
 
+// start partners
+Route::get('/partners', function () {
+    return view('viewPartners/partners');
+});
+// end partners
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -12,9 +12,9 @@
                 <div class="bg-white  px-4 pt-5 pb-2 sm:p-6 sm:pb-4">
                 <div class="">
                     <div class="mb-2">
-                        <label class="block text-blue-900 text-sm font-bold mb-2">¿Seguro que desea eliminar el elemento?:</label>
-                        <input type="text" disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-blue-800"  placeholder="Ingrese el nombre" wire:model="name">
-                        @error('name') <span class="text-xs italic text-red-500">{{$message}}</span>@enderror
+                        <label class="block text-blue-900 text-sm font-bold mb-2">¿Seguro que desea eliminar a: ?:</label>
+                        <input type="text" disabled class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-blue-800" wire:model="last_name">
+                        @error('last_name') <span class="text-xs italic text-red-500">{{$message}}</span>@enderror
                     </div>
                 </div>
                 </div>

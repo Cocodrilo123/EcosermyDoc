@@ -49,7 +49,7 @@
                         <!-- start sidebar -->
                         <div x-show="open" @click.away="open = false" class="top-0 left-0 h-screen w-60 bg-white rounded shadow-md absolute mt-20 bg-white text-black">
                             <!-- sidebar content -->
-                            <div class="flex flex-col mt-1">
+                            <div class="flex flex-col mt-1 px-2">
                                 <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
                                     @component('components/menu_lists.menu_title')
                                         @slot('title', 'Areas y proyectos')
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-col mt-1">
+                            <div class="flex flex-col mt-1 px-2">
                                 <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
                                     @component('components/menu_lists.menu_title')
                                         @slot('title', 'Cargos u Ocupaciones')
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex flex-col mt-1">
+                            <div class="flex flex-col mt-1 px-2">
                                 <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
                                     @component('components/menu_lists.menu_title')
                                         @slot('title', 'Convocatorias')
@@ -109,6 +109,31 @@
                                             @slot('url', 'Ruta')
                                             @slot('icon', 'icons\096-profile.svg')
                                             @slot('text', 'Postulantes')
+                                        @endcomponent
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col mt-1 px-2">
+                                <div x-data="{ open: false }" class="flex flex-col divide-y-8 divide-y divide-blue-900 mb-4">
+                                    @component('components/menu_lists.menu_title')
+                                        @slot('title', 'Socios')
+                                    @endcomponent
+                                    <div x-show="open" @click.away="open = false" class="flex flex-col">
+                                        @component('components/menu_lists.menu_item')
+                                            @slot('url', 'partners')
+                                            @slot('icon', 'icons\099-comunidad.svg')
+                                            @slot('text', 'Socios')
+                                        @endcomponent
+                                        @component('components/menu_lists.menu_item')
+                                            @slot('url', 'Ruta')
+                                            @slot('icon', 'icons\100-family.svg')
+                                            @slot('text', 'Parentescos')
+                                        @endcomponent
+                                        @component('components/menu_lists.menu_item')
+                                            @slot('url', 'Ruta')
+                                            @slot('icon', 'icons\101-web.svg')
+                                            @slot('text', 'Padron de socios')
                                         @endcomponent
                                     </div>
                                 </div>
