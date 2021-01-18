@@ -20,7 +20,7 @@
     </div>
 
     <div class="border border-blue-800 mx-5 bg-white shadow rounded-lg overflow-hidden ">
-        <table class=" bg-white table-fixed text-left border-b ">
+        <table class=" bg-white table-fixed text-left border-b mx-2">
             <thead class="border-b bg-green-50">
                 <tr>
                     <th class=" py-2 px-4 w-1/4">Nombre</th>

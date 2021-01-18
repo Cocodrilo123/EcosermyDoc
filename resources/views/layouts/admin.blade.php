@@ -126,7 +126,7 @@
                                             @slot('text', 'Socios')
                                         @endcomponent
                                         @component('components/menu_lists.menu_item')
-                                            @slot('url', 'Ruta')
+                                            @slot('url', 'kins')
                                             @slot('icon', 'icons\100-family.svg')
                                             @slot('text', 'Parentescos')
                                         @endcomponent

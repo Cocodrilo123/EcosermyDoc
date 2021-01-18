@@ -20,8 +20,8 @@
     </div>
 
     <div class="border border-blue-800 mx-5 bg-white shadow rounded-lg overflow-hidden ">
-        <table class=" bg-white table-fixed text-left border-b ">
-            <thead class="border-b  bg-green-50 mx-2">
+        <table class=" bg-white table-fixed text-left border-b mx-2">
+            <thead class="border-b  bg-green-50">
                 <tr>
                     <th class=" py-2 w-1/16 text-center">ID</th>
                     <th class=" py-2 w-1/4">Nombre</th>
@@ -30,17 +30,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($ecosermyCharges as $ecosermyCharge)
+                @foreach($kins as $kin)
                     <tr>
-                        <td class="border-b px-3 py-3 text-center text-blue-900">{{$ecosermyCharge->id}}</td>
-                        <td class="border-b px-4 py-3 text-sm text-blue-900">{{$ecosermyCharge->name}}</td>
-                        <td class="border-b px-4 py-3 text-xs text-blue-900">{{$ecosermyCharge->description}}</td>
+                        <td class="border-b px-3 py-3 text-center text-blue-900">{{$kin->id}}</td>
+                        <td class="border-b px-4 py-3 text-xs text-blue-900">{{$kin->name}}</td>
+                        <td class="border-b px-4 py-3 text-xs text-blue-900">{{$kin->description}}</td>
                         <td class="border-b px-4 py-3 flex justify-center flex flex-wrap">
                             @component('components/buttons.btn_edit')
-                                @slot('function', "edit($ecosermyCharge->id)")
+                                @slot('function', "edit($kin->id)")
                             @endcomponent
                             @component('components/buttons.btn_delete')
-                                @slot('function', "deleteModal($ecosermyCharge->id)")
+                                @slot('function', "deleteModal($kin->id)")
                             @endcomponent
                         </td>
                     </tr>
@@ -48,14 +48,15 @@
             </tbody>
         </table>
         <div class="bg-white py-2 px-4 bg-green-50">
-            {{$ecosermyCharges->links()}}
+            {{$kins->links()}}
         </div>
     </div>
     @if($isOpen)
-        @include('livewire.charges/modals/general-create')
+        @include('livewire.partners/modals/kin-create')
     @endif
     @if($isOpenDelete)
-        @include('livewire.charges/modals/general-delete')
+        @include('livewire.partners/modals/kin-delete')
     @endif
 </div>
+
 

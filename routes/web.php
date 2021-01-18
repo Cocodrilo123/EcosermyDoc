@@ -50,6 +50,9 @@ Route::get('/calls', function () {
 Route::get('/partners', function () {
     return view('viewPartners/partners');
 });
+Route::get('/kins', function () {
+    return view('viewPartners/kins');
+});
 // end partners
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

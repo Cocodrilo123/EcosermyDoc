@@ -21,7 +21,7 @@
 
     <div class="border border-blue-800 mx-5 bg-white shadow rounded-lg overflow-hidden ">
         <table class=" bg-white table-fixed text-left border-b ">
-            <thead class="border-b  bg-green-50 -mx-3">
+            <thead class="border-b  bg-green-50 mx-2">
                 <tr>
                     <th class=" py-2 w-1/16 text-center">ID</th>
                     <th class=" py-2 w-1/4">Nombre</th>
