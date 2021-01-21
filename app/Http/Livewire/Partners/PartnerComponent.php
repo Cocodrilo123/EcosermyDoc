@@ -23,7 +23,7 @@ class PartnerComponent extends Component
     ];
     public function render()
     {
-        $partners = partner::where('last_name', 'like', '%'.$this->search.'%')->orderBy('last_name','asc')->paginate(6);
+        $partners = partner::where('last_name', 'like', '%'.$this->search.'%')->orderBy('last_name','asc')->paginate(10);
         return view('livewire.partners.partner-component', compact('partners'));
     }
     public function create()

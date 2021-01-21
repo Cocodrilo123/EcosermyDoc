@@ -32,7 +32,7 @@
 
 </head>
 
-<body class="flex h-screen bg-gray-100 font-sans">
+<body class="flex h-screen bg-gray-100 font-sans" >
 
     <div class="flex flex-row flex-wrap flex-1 flex-grow content-start">
         <div class="h-20 lg:h-20 w-full flex flex-wrap fixed">
@@ -131,7 +131,7 @@
                                             @slot('text', 'Parentescos')
                                         @endcomponent
                                         @component('components/menu_lists.menu_item')
-                                            @slot('url', 'Ruta')
+                                            @slot('url', 'census')
                                             @slot('icon', 'icons\101-web.svg')
                                             @slot('text', 'Padron de socios')
                                         @endcomponent

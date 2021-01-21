@@ -53,6 +53,9 @@ Route::get('/partners', function () {
 Route::get('/kins', function () {
     return view('viewPartners/kins');
 });
+Route::get('/census', function () {
+    return view('viewPartners/census');
+});
 // end partners
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
